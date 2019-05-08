@@ -16,9 +16,9 @@ export class ToastModule {
         return {
             ngModule: ToastModule,
             providers: [
-                {
+                { // define uma implementação padrão para o token deste módulo injetado no service e no componente toast
                     provide: TOAST_CONFIG_TOKEN,
-                    useValue: { ...defaultToastConfig, ...config },
+                    useValue: { ...defaultToastConfig, ...config }, // faz o merge com os valores das propriedades spread operator
                 },
             ],
         };
