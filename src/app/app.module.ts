@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { LoadingSpinnerComponent } from './loading-spinner-component/loading-spinner.component';
 import { HelloComponent } from './hello/hello.component';
 import { ToastModule } from './toast/toast.module';
+import { ToastCustomComponent } from './toast-custom/toast-custom.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoadingSpinnerComponent,
-    HelloComponent
+    HelloComponent,
+    ToastCustomComponent
   ],
   imports: [
     BrowserModule,
