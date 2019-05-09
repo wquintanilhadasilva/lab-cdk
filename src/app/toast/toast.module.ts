@@ -9,7 +9,8 @@ import { defaultToastConfig, TOAST_CONFIG_TOKEN } from './toast-config';
 @NgModule({
     imports: [OverlayModule, MatIconModule],
     declarations: [ToastComponent],
-    entryComponents: [ToastComponent]
+    entryComponents: [ToastComponent],
+    providers: [],
 })
 export class ToastModule {
     public static forRoot(config = defaultToastConfig): ModuleWithProviders {

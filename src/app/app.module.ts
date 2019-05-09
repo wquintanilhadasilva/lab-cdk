@@ -8,6 +8,8 @@ import { LoadingSpinnerComponent } from './loading-spinner-component/loading-spi
 import { HelloComponent } from './hello/hello.component';
 import { ToastModule } from './toast/toast.module';
 import { ToastCustomComponent } from './toast-custom/toast-custom.component';
+import { defaultToastConfig, TOAST_CONFIG_TOKEN } from './toast/toast-config';
+import { ToastService } from './toast';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,17 @@ import { ToastCustomComponent } from './toast-custom/toast-custom.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    ToastModule.forRoot(),
+    ToastModule,
+    // ToastModule.forRoot(),
+    ToastModule.forRoot(defaultToastConfig),
   ],
-  providers: [],
+  providers: [
+    // ToastService,
+    // { // aplica a configuração customizada do toast neste componente
+    //   provide: TOAST_CONFIG_TOKEN,
+    //   useValue: defaultToastConfig,
+    // },
+  ],
   bootstrap: [AppComponent],
   entryComponents: [ LoadingSpinnerComponent ]
 })

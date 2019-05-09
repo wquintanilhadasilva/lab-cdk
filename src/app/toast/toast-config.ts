@@ -31,4 +31,4 @@ export const defaultToastConfig: ToastConfig = {
     },
 };
 
-export const TOAST_CONFIG_TOKEN = new InjectionToken('toast-config');
+export const TOAST_CONFIG_TOKEN = new InjectionToken<ToastConfig>('toast-config');

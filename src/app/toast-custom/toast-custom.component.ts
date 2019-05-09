@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ToastService } from '../toast/toast.service';
 
-import { ToastConfig, TOAST_CONFIG_TOKEN } from '../toast/toast-config';
+import { ToastConfig, TOAST_CONFIG_TOKEN, defaultToastConfig } from '../toast/toast-config';
 
 // Configuração customizada do provider para o toast
 export const customToastConfig: ToastConfig = {
@@ -21,11 +21,11 @@ export const customToastConfig: ToastConfig = {
   styleUrls: ['./toast-custom.component.css'],
   encapsulation: ViewEncapsulation.None,
   providers: [
+    ToastService,
     { // aplica a configuração customizada do toast neste componente
       provide: TOAST_CONFIG_TOKEN,
-      useExisting: customToastConfig,
-      multi: false,
-    }
+      useValue: customToastConfig,
+    },
   ],
 })
 export class ToastCustomComponent implements OnInit {
