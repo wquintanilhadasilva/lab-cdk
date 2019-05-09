@@ -22,9 +22,9 @@ import { ToastService } from './toast';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    ToastModule,
-    // ToastModule.forRoot(),
-    ToastModule.forRoot(defaultToastConfig),
+    // ToastModule,
+    ToastModule.forRoot(),
+    // ToastModule.forRoot(defaultToastConfig),
   ],
   providers: [
     // ToastService,
